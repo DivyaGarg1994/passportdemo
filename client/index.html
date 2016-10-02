@@ -1,0 +1,114 @@
+<!doctype html>
+<html ng-app="example1" ng-init="person={fName:'divya',lName:'garg'}" ng-cloak>
+    <head>
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+        <style>
+          .green{
+            color:green;
+          }
+          .blue{
+            color:blue;
+          }
+        </style>
+    </head>
+    <body>
+          <h1>first file</h1>
+
+          <!-- playing with numbers -->
+          <div ng-controller="ctlr1">
+            <div>
+              <input type="text" ng-model="first"/><br>
+              <input type="text" ng-model="second"/><br>
+            </div>
+              first = {{first}}
+              second= <p data-ng-bind="second"></p>
+              <button ng-click="updateValue()">add</button>
+
+              <br>
+              {{person.fName + " " + person.lName}} calculated sum as {{calculate}}
+          </div>
+          <br><br><br>
+
+          <!-- playing with arrays and lists -->
+          <div ng-controller="ctlr2">
+              A total {{groceries.length}} vegetables available :<br>
+              <ul >
+                <li ng-repeat="item in groceries">{{item.item}} - {{item.status}}</li>
+              </ul>
+
+              <br><br>
+                  <ul >
+                    <li>{{groceries[0].item}} - {{groceries[0].status}}</li>
+                  </ul>
+                  <ul >
+                    <li ng-repeat="item in groceries" ng-if="$index >0">{{item.item}} - {{item.status}}</li>
+                  </ul>
+              <br><br>
+              using ng-repeat-start ng-repeat-end<br>
+                  <table>
+                    <tr ng-repeat-start="item in groceries">
+                      <td>{{item.item}}</td>
+                    <tr ng-repeat-end>
+                  </table>
+
+              <label>
+                change the first grocery item to : <input type="text" ng-model="groceries[0].item">
+              </label>
+
+              <br><br><br>
+              <label>
+                <input type="checkbox" ng-model="showList">Show ordered
+              </label>
+              <div ng-include src="getList()"></div>
+
+              <br><br>
+
+
+          </div>
+
+
+
+          <label>type number b/w 1-4
+            <input type="text" ng-model="num">
+          </label>
+          <div ng-switch="num">
+            <p ng-switch-when="1">entered 1</p>
+            <p ng-switch-when="2">entered 2</p>
+            <p ng-switch-when="3">entered 3</p>
+            <p ng-switch-when="4">entered 4</p>
+          </div>
+          <br><br>
+
+          <div ng-controller="event">
+              <input ng-blur="blur = blur+1"
+                     ng-keydown="keydown($event)"/>
+              <text>blur = {{blur}}</text>
+              <text>keydown = {{key}}</text>
+          </div>
+          <br><br>
+          <div>
+            <button ng-disabled="disBtn">btn</button>
+            <input type="checkbox" ng-model="disBtn">Disable ?
+          </div>
+
+
+          <br><br>
+          <input type="checkbox" ng-model="day">Morning?<br>
+          <p ng-hide="day">Gud morning</p>
+          <p ng-hide="!day">gud night</p>
+          <br><br>
+
+          <select ng-model="color">
+            <option value="blue">blue</option>
+            <option value="green">green</option>
+          </select>
+
+          <p ng-bind="color"></p>
+          <p ng-class="color">text</p>
+
+          <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+          <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+          <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+          <script type="text/javascript" src="js/ex1.js"></script>
+    </body>
+</html>

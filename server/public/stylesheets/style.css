@@ -1,0 +1,42 @@
+body {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: rgba(253, 166, 63, 0.6);
+}
+
+p {
+  color: red;
+}
+
+.row {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+#mymsg{
+  background-color: rgba(255, 255, 0, 0.15);
+  float:right;
+  padding : 2%;
+  border:1px solid grey;
+  border-radius: 10px;
+}
+
+
+#othermsg{
+  background-color: rgba(254, 204, 70, 0.51);
+  float:left;
+  padding:2%;
+  border:1px solid grey;
+  border-radius: 10px;
+}
+
+
+#msgText{
+  padding :2%;
+}
+
+#msgList{
+  background-color:white;
+  height:80%;
+  border:2px solid black;
+  overflow:auto;
+}

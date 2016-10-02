@@ -1,0 +1,25 @@
+sudo npm install express-generator -g
+express collaba
+cd collaba
+npm install
+
+
+npm install socket.io
+npm start
+
+
+
+
+
+
+
+
+
+
+passportjs
+
+.post('/' ,funtion(res,req,next){
+console.log(req.body);
+res.send(
+
+});

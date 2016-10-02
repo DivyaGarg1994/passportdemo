@@ -1,0 +1,15 @@
+npm install express-generator -g
+//mention name
+expess //name
+cd //name of file
+npm install --no-bin-links
+npm install socket.io --save
+sudo npm install nodemon -g //install nodemon
+npm start            //execute file in bin
+nodemon ./bin/www	//or change in start in package.json node---nodemon
+
+
+vagrant restart //to restart the vagrant after changing vagrant file
+rs//restart
+
+sudo systemctl start mongodb.service //when mongo is not coonected
